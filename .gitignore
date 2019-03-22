@@ -1,0 +1,85 @@
+#OS junk files
+[Tt]humbs.db
+*.DS_Store
+#Visual Studio files
+*.[Oo]bj
+*.user
+*.aps
+*.pch
+*.vspscc
+*.vssscc
+*_i.c
+*_p.c
+*.ncb
+*.suo
+*.tlb
+*.tlh
+*.bak
+*.[Cc]ache
+*.ilk
+*.log
+*.lib
+*.sbr
+*.sdf
+*.pyc
+ipch/
+obj/
+[Dd]ebug*/
+[Rr]elease*/
+[Bb]in*/
+Ankh.NoLoad
+
+#Tooling
+_ReSharper*/
+*.resharper
+[Tt]est[Rr]esult*
+
+#Project files
+[Bb]uild/
+
+#Subversion files
+.svn
+
+# Office Temp Files
+~$*
+
+#Sitecore
+*.item
+*.cache
+App_Data
+temp*/
+upload*/
+logs*/
+*.del
+*.txt
+
+# not ignore following
+!Publish/Website/[Bb]in
+!.gitkeep
+!/code/lib/PDFBox.NET-1.8.7/[Bb]in*/
+/Code/Islington.Web.UI/bin
+/Code/Islington.Web.UI.Templates/bin
+*.suo
+/code/codeCoverage.testsettings
+/Publish/Data/indexes/sitecore_core_index/*
+/Publish/Data/indexes/sitecore_core_index/*.lock
+/Publish/Data/indexes/sitecore_master_index/*
+/Publish/Data/indexes/sitecore_web_index/*
+!/Code/Islington.Web.UI/upload/placeholder.txt
+!/Publish/Website/upload/placeholder.txt
+
+#ignores files in the publish folder\
+**/.vs
+Islington/Islington.Web.UI/gruntfile - Copy.js
+/Publish/Data/indexes/__system/segments_1
+/Islington/packages
+Castle.Core.3.3.3
+packages
+/Islington/Islington.Web.UI/Data/indexes/sitecore_analytics_index
+/Islington/Islington.Web.UI/Sitecore/shell/Applications/Page Modes/Ouput
+/Islington/Islington.Web.UI/Data/indexes/sitecore_master_index/segments_1
+diagnostics
+sitecore_web_index
+sitecore_testing_index
+/Islington/Islington.Web.UI/Data/indexes/sitecore_suggested_test_index
+sitecore_master_index
