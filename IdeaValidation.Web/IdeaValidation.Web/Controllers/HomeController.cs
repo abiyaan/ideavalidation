@@ -46,7 +46,11 @@ namespace IdeaValidation.Web.Controllers
             ViewBag.JsonData = "";
             return View();
         }
-
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="companyNumber"></param>
+        /// <returns></returns>
         [HttpPost]
         public async Task<ActionResult> About(string companyNumber)
         {
