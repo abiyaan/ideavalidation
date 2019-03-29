@@ -7,23 +7,23 @@
 <div class="jumbotron">
     @using (Html.BeginForm("Index", "Home", FormMethod.Post))
     {
-    <fieldset>
-        <p>
-            @Html.LabelFor(model => model.Keyword)
-            @Html.TextBoxFor(model => model.Keyword)
-        </p>
-        <p>
-            @Html.LabelFor(model => model.Countries)
-            @Html.DropDownList("CountriesToAnalyse", new SelectList(Model.Countries))
-        </p>
-        <p>
-            @Html.LabelFor(model => model.Languages)
-            @Html.DropDownList("LanguagesToAnalyse", new SelectList(Model.Languages))
-        </p>
-        <p>
-            <input type="submit" name="User Request" value="Submit" />
-        </p>
-    </fieldset>
+        <fieldset>
+            <p>
+                @Html.LabelFor(model => model.Keyword)
+                @Html.TextBoxFor(model => model.Keyword)
+            </p>
+            <p>
+                @Html.LabelFor(model => model.Countries)
+                @Html.DropDownList("CountriesToAnalyse", new SelectList(Model.Countries))
+            </p>
+            <p>
+                @Html.LabelFor(model => model.Languages)
+                @Html.DropDownList("LanguagesToAnalyse", new SelectList(Model.Languages))
+            </p>
+            <p>
+                <input type="submit" name="User Request" value="Submit" />
+            </p>
+        </fieldset>
     }
 </div>
 

@@ -4,11 +4,23 @@ using System.Linq;
 using System.Web;
 using System.Web.Mvc;
 using IdeaValidation.Web.Models;
+using CompaniesHouse;
+using CompaniesHouse.Request;
+using System.Threading.Tasks;
+using CompaniesHouse.Response.Search;
+using System.Net;
+using System.IO;
+using CompaniesHouse.Response.CompanyProfile;
+using System.Web.Script.Serialization;
+using Newtonsoft.Json;
+//using Newtonsoft.Json;
 
 namespace IdeaValidation.Web.Controllers
 {
     public class HomeController : Controller
     {
+        CompaniesHouseSettings CHSettings = new CompaniesHouseSettings("dJ7lfN4d58OcauxMLZAW06g3IMu2asAYDr0w__Kk");
+
         public ActionResult Index()
         {
             var model = new RequestParameters();
@@ -31,10 +43,60 @@ namespace IdeaValidation.Web.Controllers
 
         public ActionResult About()
         {
+            ViewBag.JsonData = "";
+            return View();
+        }
+
+        [HttpPost]
+        public async Task<ActionResult> About(string companyNumber)
+        {
             ViewBag.Message = "Your application description page.";
+
+            var profileData = await CompanyProfileData(companyNumber);
+            ViewBag.JsonData = JsonPrettify(new JavaScriptSerializer().Serialize(profileData));
 
             return View();
         }
+
+        private async Task<CompanyProfile> CompanyProfileData(string companyNumber)
+        {
+            using (var client = new CompaniesHouseClient(CHSettings))
+            {
+                var profile = await client.GetCompanyProfileAsync(companyNumber);
+
+                return profile.Data;
+            }
+        }
+
+        private async Task<SearchItem[]> SearchCHData()
+        {
+            using (var client = new CompaniesHouseClient(CHSettings))
+            {
+                var request = new SearchRequest()
+                {
+                    Query = "Cloth",
+                    StartIndex = 10,
+                    ItemsPerPage = 10
+                };
+
+                var result = await client.SearchAllAsync(request);
+
+                return result.Data.Items;
+            }
+        }
+
+        public static string JsonPrettify(string json)
+        {
+            using (var stringReader = new StringReader(json))
+            using (var stringWriter = new StringWriter())
+            {
+                var jsonReader = new JsonTextReader(stringReader);
+                var jsonWriter = new JsonTextWriter(stringWriter) { Formatting = Formatting.Indented };
+                jsonWriter.WriteToken(jsonReader);
+                return stringWriter.ToString();
+            }
+        }
+
 
         public ActionResult Contact()
         {
