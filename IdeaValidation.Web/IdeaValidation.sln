@@ -5,6 +5,10 @@ VisualStudioVersion = 15.0.27703.2047
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "IdeaValidation.Web", "IdeaValidation.Web\IdeaValidation.Web.csproj", "{BCBDFC94-64EE-4E92-9BD8-DBCE6A897FFB}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "IdeaValidation.Model", "IdeaValidation.Model\IdeaValidation.Model.csproj", "{C84E12C1-A4B7-4BC6-B106-7674D38E34B5}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "IdeaValidation.Data", "IdeaValidation.Data\IdeaValidation.Data.csproj", "{9B1EB849-8538-4972-B04E-BA61D068703F}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,6 +19,14 @@ Global
 		{BCBDFC94-64EE-4E92-9BD8-DBCE6A897FFB}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{BCBDFC94-64EE-4E92-9BD8-DBCE6A897FFB}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{BCBDFC94-64EE-4E92-9BD8-DBCE6A897FFB}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C84E12C1-A4B7-4BC6-B106-7674D38E34B5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C84E12C1-A4B7-4BC6-B106-7674D38E34B5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C84E12C1-A4B7-4BC6-B106-7674D38E34B5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C84E12C1-A4B7-4BC6-B106-7674D38E34B5}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9B1EB849-8538-4972-B04E-BA61D068703F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9B1EB849-8538-4972-B04E-BA61D068703F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9B1EB849-8538-4972-B04E-BA61D068703F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9B1EB849-8538-4972-B04E-BA61D068703F}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
