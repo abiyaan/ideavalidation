@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="e914162837ac4d048d6f3463ce58f9c9" Name="Diagram1">
+        <EntityTypeShape EntityType="ideavalidationModel.Address" Width="1.5" PointX="3" PointY="3.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="ideavalidationModel.Category" Width="1.5" PointX="5.25" PointY="1.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="ideavalidationModel.Company" Width="1.5" PointX="5.25" PointY="3.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="ideavalidationModel.CompanyCategory" Width="1.5" PointX="7.5" PointY="2" IsExpanded="true" />
+        <EntityTypeShape EntityType="ideavalidationModel.Country" Width="1.5" PointX="0.75" PointY="4" IsExpanded="true" />
+        <EntityTypeShape EntityType="ideavalidationModel.Finance" Width="1.5" PointX="7.5" PointY="5" IsExpanded="true" />
+        <EntityTypeShape EntityType="ideavalidationModel.Person" Width="1.5" PointX="0.75" PointY="0.75" IsExpanded="true" />
+        <AssociationConnector Association="ideavalidationModel.FK_Address_Countries" ManuallyRouted="false" />
+        <AssociationConnector Association="ideavalidationModel.FK_CompanyCategory_Category" ManuallyRouted="false" />
+        <AssociationConnector Association="ideavalidationModel.FK_CompanyCategory_Company" ManuallyRouted="false" />
+        <AssociationConnector Association="ideavalidationModel.FK_Finance_Company" ManuallyRouted="false" />
+        <AssociationConnector Association="ideavalidationModel.CompanyAddress" ManuallyRouted="false" />
+        <AssociationConnector Association="ideavalidationModel.CompanyPerson" />
+        <EntityTypeShape EntityType="ideavalidationModel.DailyVisit" Width="1.5" PointX="7.5" PointY="9.125" />
+        <EntityTypeShape EntityType="ideavalidationModel.OnlinePresence" Width="1.5" PointX="7.5" PointY="11.5" />
+        <AssociationConnector Association="ideavalidationModel.FK_DailyVisits_Company" />
+        <AssociationConnector Association="ideavalidationModel.FK_SocialMedia_Company" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

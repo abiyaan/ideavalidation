@@ -39,6 +39,8 @@
     <Reference Include="System" />
     <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -47,12 +49,80 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Class1.cs" />
+    <Compile Include="Address.cs">
+      <DependentUpon>IdeaValidation.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Category.cs">
+      <DependentUpon>IdeaValidation.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Company.cs">
+      <DependentUpon>IdeaValidation.tt</DependentUpon>
+    </Compile>
+    <Compile Include="CompanyCategory.cs">
+      <DependentUpon>IdeaValidation.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Country.cs">
+      <DependentUpon>IdeaValidation.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Finance.cs">
+      <DependentUpon>IdeaValidation.tt</DependentUpon>
+    </Compile>
+    <Compile Include="IdeaValidation.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>IdeaValidation.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="IdeaValidation.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>IdeaValidation.tt</DependentUpon>
+    </Compile>
+    <Compile Include="IdeaValidation.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>IdeaValidation.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="IdeaValidationRepository.cs" />
+    <Compile Include="IIdeaValidationRepository.cs" />
+    <Compile Include="Person.cs">
+      <DependentUpon>IdeaValidation.tt</DependentUpon>
+    </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="SocialMedia.cs">
+      <DependentUpon>IdeaValidation.tt</DependentUpon>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
+    <EntityDeploy Include="IdeaValidation.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>IdeaValidation.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <None Include="IdeaValidation.edmx.diagram">
+      <DependentUpon>IdeaValidation.edmx</DependentUpon>
+    </None>
     <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\IdeaValidation.Model\IdeaValidation.Model.csproj">
+      <Project>{c84e12c1-a4b7-4bc6-b106-7674d38e34b5}</Project>
+      <Name>IdeaValidation.Model</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="IdeaValidation.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>IdeaValidation.edmx</DependentUpon>
+      <LastGenOutput>IdeaValidation.Context.cs</LastGenOutput>
+    </Content>
+    <Content Include="IdeaValidation.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>IdeaValidation.edmx</DependentUpon>
+      <LastGenOutput>IdeaValidation.cs</LastGenOutput>
+    </Content>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

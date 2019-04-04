@@ -4,6 +4,7 @@ using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Web;
 using System.Web.UI.WebControls;
+using IdeaValidation.Data;
 
 namespace IdeaValidation.Web.Models
 {
@@ -18,7 +19,7 @@ namespace IdeaValidation.Web.Models
         /// <summary>
         /// List of countries to perform analysis
         /// </summary>
-        public IEnumerable<string> Countries { get; set; }
+        public IEnumerable<Country> Countries { get; set; }
 
         /// <summary>
         /// List of languages to perform analysis

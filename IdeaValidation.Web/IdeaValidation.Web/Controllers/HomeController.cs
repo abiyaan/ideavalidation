@@ -12,6 +12,7 @@ using System.Net;
 using System.IO;
 using CompaniesHouse.Response.CompanyProfile;
 using System.Web.Script.Serialization;
+using IdeaValidation.Data;
 using Newtonsoft.Json;
 //using Newtonsoft.Json;
 
@@ -24,7 +25,8 @@ namespace IdeaValidation.Web.Controllers
         public ActionResult Index()
         {
             var model = new RequestParameters();
-            model.Countries = new List<string> {"", "UK", "USA", "China", "India"};
+            var ideaValidationRepository = new IdeaValidationRepository(new ideavalidationConnection());
+            model.Countries = ideaValidationRepository.GetAllCountries();
             model.Languages = new List<string> {"", "English", "Arabic", "Hindi", "Chinese"};
 
             return View(model);
@@ -34,7 +36,7 @@ namespace IdeaValidation.Web.Controllers
         public ActionResult Index(RequestParameters model)
         {
             model = new RequestParameters();
-            model.Countries = new List<string> { "", "UK", "USA", "China", "India" };
+            model.Countries = null;
             model.Languages = new List<string> { "", "English", "Arabic", "Hindi", "Chinese" };
 
             // not doing much for now.
