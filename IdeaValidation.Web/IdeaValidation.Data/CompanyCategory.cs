@@ -18,7 +18,7 @@ namespace IdeaValidation.Data
         public int CategoryId { get; set; }
         public int CompanyId { get; set; }
     
-        public virtual Category Category { get; set; }
         public virtual Company Company { get; set; }
+        public virtual Category Category { get; set; }
     }
 }

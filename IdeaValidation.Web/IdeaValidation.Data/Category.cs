@@ -18,6 +18,8 @@ namespace IdeaValidation.Data
         public Category()
         {
             this.CompanyCategories = new HashSet<CompanyCategory>();
+            this.Category1 = new HashSet<Category>();
+            this.Categories = new HashSet<Category>();
         }
     
         public int Id { get; set; }
@@ -26,5 +28,9 @@ namespace IdeaValidation.Data
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<CompanyCategory> CompanyCategories { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<Category> Category1 { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<Category> Categories { get; set; }
     }
 }

@@ -82,7 +82,7 @@ namespace IdeaValidation.Data
 
         public void AddCategory(Category category)
         {
-            throw new NotImplementedException();
+            this.context.Categories.Add(category);
         }
 
         public void RemoveCategory(Category category)

@@ -26,7 +26,6 @@ namespace IdeaValidation.Data
         }
     
         public virtual DbSet<Address> Addresses { get; set; }
-        public virtual DbSet<Category> Categories { get; set; }
         public virtual DbSet<Company> Companies { get; set; }
         public virtual DbSet<CompanyCategory> CompanyCategories { get; set; }
         public virtual DbSet<Country> Countries { get; set; }
@@ -34,5 +33,6 @@ namespace IdeaValidation.Data
         public virtual DbSet<Person> People { get; set; }
         public virtual DbSet<DailyVisit> DailyVisits { get; set; }
         public virtual DbSet<OnlinePresence> OnlinePresences { get; set; }
+        public virtual DbSet<Category> Categories { get; set; }
     }
 }

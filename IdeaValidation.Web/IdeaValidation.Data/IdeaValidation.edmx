@@ -317,15 +317,6 @@ warning 6002: The table/view 'ideavalidation.dbo.CompanyPerson' does not have a 
           <NavigationProperty Name="Country" Relationship="Self.FK_Address_Countries" FromRole="Address" ToRole="Country" />
           <NavigationProperty Name="Companies" Relationship="Self.CompanyAddress" FromRole="Address" ToRole="Company" />
         </EntityType>
-        <EntityType Name="Category">
-          <Key>
-            <PropertyRef Name="Id" />
-          </Key>
-          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="Name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
-          <Property Name="ParentId" Type="Int32" />
-          <NavigationProperty Name="CompanyCategories" Relationship="Self.FK_CompanyCategory_Category" FromRole="Category" ToRole="CompanyCategory" />
-        </EntityType>
         <EntityType Name="Company">
           <Key>
             <PropertyRef Name="Id" />
@@ -353,8 +344,8 @@ warning 6002: The table/view 'ideavalidation.dbo.CompanyPerson' does not have a 
           <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="CategoryId" Type="Int32" Nullable="false" />
           <Property Name="CompanyId" Type="Int32" Nullable="false" />
-          <NavigationProperty Name="Category" Relationship="Self.FK_CompanyCategory_Category" FromRole="CompanyCategory" ToRole="Category" />
           <NavigationProperty Name="Company" Relationship="Self.FK_CompanyCategory_Company" FromRole="CompanyCategory" ToRole="Company" />
+          <NavigationProperty Name="Category" Relationship="ideavalidationModel.FK_CompanyCategory_Category" FromRole="CompanyCategory" ToRole="Category" />
         </EntityType>
         <EntityType Name="Country">
           <Key>
@@ -401,18 +392,6 @@ warning 6002: The table/view 'ideavalidation.dbo.CompanyPerson' does not have a 
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK_CompanyCategory_Category">
-          <End Role="Category" Type="Self.Category" Multiplicity="1" />
-          <End Role="CompanyCategory" Type="Self.CompanyCategory" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="Category">
-              <PropertyRef Name="Id" />
-            </Principal>
-            <Dependent Role="CompanyCategory">
-              <PropertyRef Name="CategoryId" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
         <Association Name="FK_CompanyCategory_Company">
           <End Role="Company" Type="Self.Company" Multiplicity="1" />
           <End Role="CompanyCategory" Type="Self.CompanyCategory" Multiplicity="*" />
@@ -443,7 +422,6 @@ warning 6002: The table/view 'ideavalidation.dbo.CompanyPerson' does not have a 
         </Association>
         <EntityContainer Name="ideavalidationConnection" annotation:LazyLoadingEnabled="true">
           <EntitySet Name="Addresses" EntityType="Self.Address" />
-          <EntitySet Name="Categories" EntityType="Self.Category" />
           <EntitySet Name="Companies" EntityType="Self.Company" />
           <EntitySet Name="CompanyCategories" EntityType="Self.CompanyCategory" />
           <EntitySet Name="Countries" EntityType="Self.Country" />
@@ -452,10 +430,6 @@ warning 6002: The table/view 'ideavalidation.dbo.CompanyPerson' does not have a 
           <AssociationSet Name="FK_Address_Countries" Association="Self.FK_Address_Countries">
             <End Role="Country" EntitySet="Countries" />
             <End Role="Address" EntitySet="Addresses" />
-          </AssociationSet>
-          <AssociationSet Name="FK_CompanyCategory_Category" Association="Self.FK_CompanyCategory_Category">
-            <End Role="Category" EntitySet="Categories" />
-            <End Role="CompanyCategory" EntitySet="CompanyCategories" />
           </AssociationSet>
           <AssociationSet Name="FK_CompanyCategory_Company" Association="Self.FK_CompanyCategory_Company">
             <End Role="Company" EntitySet="Companies" />
@@ -482,6 +456,15 @@ warning 6002: The table/view 'ideavalidation.dbo.CompanyPerson' does not have a 
           <AssociationSet Name="FK_SocialMedia_Company" Association="ideavalidationModel.FK_SocialMedia_Company">
             <End Role="Company" EntitySet="Companies" />
             <End Role="OnlinePresence" EntitySet="OnlinePresences" />
+          </AssociationSet>
+          <EntitySet Name="Categories" EntityType="ideavalidationModel.Category" />
+          <AssociationSet Name="FK_CompanyCategory_Category" Association="ideavalidationModel.FK_CompanyCategory_Category">
+            <End Role="Category" EntitySet="Categories" />
+            <End Role="CompanyCategory" EntitySet="CompanyCategories" />
+          </AssociationSet>
+          <AssociationSet Name="SubCategories1" Association="ideavalidationModel.SubCategories">
+            <End Role="Category" EntitySet="Categories" />
+            <End Role="Category1" EntitySet="Categories" />
           </AssociationSet>
         </EntityContainer>
         <Association Name="CompanyPerson">
@@ -531,6 +514,33 @@ warning 6002: The table/view 'ideavalidation.dbo.CompanyPerson' does not have a 
             </Dependent>
           </ReferentialConstraint>
         </Association>
+        <EntityType Name="Category">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Name" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="CompanyCategories" Relationship="ideavalidationModel.FK_CompanyCategory_Category" FromRole="Category" ToRole="CompanyCategory" />
+          <NavigationProperty Name="Category1" Relationship="ideavalidationModel.SubCategories" FromRole="Category" ToRole="Category1" />
+          <NavigationProperty Name="Categories" Relationship="ideavalidationModel.SubCategories" FromRole="Category1" ToRole="Category" />
+          <Property Name="ParentId" Type="Int32" />
+        </EntityType>
+        <Association Name="FK_CompanyCategory_Category">
+          <End Type="ideavalidationModel.Category" Role="Category" Multiplicity="1" />
+          <End Type="ideavalidationModel.CompanyCategory" Role="CompanyCategory" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Category">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="CompanyCategory">
+              <PropertyRef Name="CategoryId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="SubCategories">
+          <End Type="ideavalidationModel.Category" Role="Category" Multiplicity="*" />
+          <End Type="ideavalidationModel.Category" Role="Category1" Multiplicity="*" />
+        </Association>
       </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
@@ -548,15 +558,6 @@ warning 6002: The table/view 'ideavalidation.dbo.CompanyPerson' does not have a 
                 <ScalarProperty Name="CountryCode" ColumnName="CountryCode" />
                 <ScalarProperty Name="Email" ColumnName="Email" />
                 <ScalarProperty Name="Phone" ColumnName="Phone" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
-          <EntitySetMapping Name="Categories">
-            <EntityTypeMapping TypeName="ideavalidationModel.Category">
-              <MappingFragment StoreEntitySet="Category">
-                <ScalarProperty Name="Id" ColumnName="Id" />
-                <ScalarProperty Name="Name" ColumnName="Name" />
-                <ScalarProperty Name="ParentId" ColumnName="ParentId" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
@@ -648,6 +649,15 @@ warning 6002: The table/view 'ideavalidation.dbo.CompanyPerson' does not have a 
                 <ScalarProperty Name="Followers" ColumnName="Followers" />
                 <ScalarProperty Name="Name" ColumnName="Name" />
                 <ScalarProperty Name="CompanyId" ColumnName="CompanyId" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Categories">
+            <EntityTypeMapping TypeName="ideavalidationModel.Category">
+              <MappingFragment StoreEntitySet="Category">
+                <ScalarProperty Name="ParentId" ColumnName="ParentId" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
                 <ScalarProperty Name="Id" ColumnName="Id" />
               </MappingFragment>
             </EntityTypeMapping>
