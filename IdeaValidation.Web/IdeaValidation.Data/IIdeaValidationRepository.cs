@@ -55,5 +55,17 @@ namespace IdeaValidation.Data
         /// <param name="countryCode"></param>
         /// <returns>List of companies by country and category</returns>
         IEnumerable<Company> GetCompaniesByCountryAndCategory(int categoryId, string countryCode);
+
+        /// <summary>
+        /// Adds a new category to the database
+        /// </summary>
+        /// <param name="category"></param>
+        void AddCategory(Category category);
+
+        /// <summary>
+        /// Removes an existing category from the database
+        /// </summary>
+        /// <param name="category"></param>
+        void RemoveCategory(Category category);
     }
 }

@@ -64,6 +64,9 @@
     <Compile Include="Country.cs">
       <DependentUpon>IdeaValidation.tt</DependentUpon>
     </Compile>
+    <Compile Include="DailyVisit.cs">
+      <DependentUpon>IdeaValidation.tt</DependentUpon>
+    </Compile>
     <Compile Include="Finance.cs">
       <DependentUpon>IdeaValidation.tt</DependentUpon>
     </Compile>
@@ -84,13 +87,13 @@
     </Compile>
     <Compile Include="IdeaValidationRepository.cs" />
     <Compile Include="IIdeaValidationRepository.cs" />
+    <Compile Include="OnlinePresence.cs">
+      <DependentUpon>IdeaValidation.tt</DependentUpon>
+    </Compile>
     <Compile Include="Person.cs">
       <DependentUpon>IdeaValidation.tt</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="SocialMedia.cs">
-      <DependentUpon>IdeaValidation.tt</DependentUpon>
-    </Compile>
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />

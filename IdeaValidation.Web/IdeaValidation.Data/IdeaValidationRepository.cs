@@ -80,6 +80,16 @@ namespace IdeaValidation.Data
             throw new NotImplementedException();
         }
 
+        public void AddCategory(Category category)
+        {
+            throw new NotImplementedException();
+        }
+
+        public void RemoveCategory(Category category)
+        {
+            throw new NotImplementedException();
+        }
+
         #endregion
 
     }
