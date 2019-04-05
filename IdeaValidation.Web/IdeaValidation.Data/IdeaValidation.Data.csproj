@@ -94,9 +94,6 @@
       <DependentUpon>IdeaValidation.tt</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="SubCategory.cs">
-      <DependentUpon>IdeaValidation.tt</DependentUpon>
-    </Compile>
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
