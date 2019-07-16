@@ -1,0 +1,22 @@
+div.validation-summary-valid{display:none}
+.well > h3 {
+    color: #9c4848;
+}
+
+.well {
+    background-color: #fff;
+    -moz-box-shadow: 0 0 10px #ccc;
+    -webkit-box-shadow: 0 0 10px #ccc;
+    box-shadow: 0 0 20px #ccc;
+    cursor: pointer;
+    /*width: 10px;*/
+    height: 100px;
+}
+
+    .well:hover {
+        box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    }
+
+.smart-form .input input, .smart-form .select select, .smart-form .textarea textarea {
+     line-height: 16px !important; 
+}

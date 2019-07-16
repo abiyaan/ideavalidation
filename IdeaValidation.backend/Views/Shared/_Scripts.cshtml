@@ -1,0 +1,19 @@
+<environment include="Development">
+    <!-- NOTE: Enable the bundle for faster loading and optimized caching! -->
+    <script src="~/js/smartadmin.min.js" asp-append-version="true"></script>
+    <script src="~/js/plugins.min.js" asp-append-version="true"></script>
+</environment>
+<environment exclude="Development">
+    <!-- NOTE: Enable the bundle for faster loading and optimized caching! -->
+    <script src="~/js/smartadmin.min.js" asp-append-version="true"></script>
+    <script src="~/js/plugins.min.js" asp-append-version="true"></script>
+</environment>
+
+<!-- JQUERY VALIDATE -->
+@{ await Html.RenderPartialAsync("_ValidationScriptsPartial"); }
+<script type="text/javascript">
+    $('.demo').hide();
+</script>
+<!--[if IE 8]>
+    <h1>Your browser is out of date, please update your browser by going to www.microsoft.com/download</h1>
+<![endif]-->

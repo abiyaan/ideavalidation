@@ -1,0 +1,83 @@
+﻿@model IdeaValidation.Core.ViewModel.Masters.CategoryCreateViewModel
+
+<div class="modal-header" style="background-color:#5a5a5a; color:#fff;">
+    <button type="button" class="close" data-dismiss="modal" aria-hidden="true" style="color:#fff">
+        &times;
+    </button>
+    <h4 class="modal-title" id="myModalLabel">Create Category</h4>
+</div>
+@*data-ajax="true" data-ajax-method="post" data-ajax-failure="OnFailure"
+      data-ajax-success="OnSuccess" data-ajax-url="../Master/CategoryCreate" data-ajax-confirm="Are you sure?"*@
+<form method="post" action="Master/CategoryCreate">
+    <div class="modal-body">
+        <div style="min-height:250px; ">
+            <div class="smart-form">
+                <fieldset>
+                    <div class="row">
+                        <section class="col col-sm-4 col-md-4 col-lg-4">
+                            <label class="label">
+                                Select Parent Category
+                            </label>
+                        </section>
+                        <section class="col-md-8 col-sm-12 col-lg-8">
+                            <label class="select">
+                                <select asp-for="ParentId"  style="line-height: 24px;"
+                                        asp-items="@(new SelectList(@Model.ParentCategory,"Value", "Text"))"></select>
+                                @*@Html.DropDownListFor(model => model.ParentId, Model.ParentCategory, "Select Parent", new { @class = "select" })*@
+                                @*<select id="selectCategory" class="select"></select>*@
+                                <i></i>
+                            </label>
+                        </section>
+                    </div>
+                    <div class="row">
+                        <section class="col col-sm-4 col-md-4 col-lg-4">
+                            <label class="label">
+                                Category Name
+                            </label>
+                        </section>
+                        <section class="col-md-8 col-sm-12 col-lg-8">
+                            <label class="input">
+                                <input type="text" asp-for="Name" placeholder="" />
+                            </label>
+                        </section>
+                    </div>
+                </fieldset>
+            </div>
+
+        </div>
+    </div>
+    <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">
+            Cancel
+        </button>
+        <button type="submit" class="btn btn-primary" id="btnSaveCategory">
+            Save
+        </button>
+    </div>
+</form>
+@section Scripts{
+    <script type="text/javascript">
+
+        function OnSuccess(result) {
+            debugger;
+        }
+
+        function OnFailure(err) {
+            debugger;
+        }
+
+                    //function createCategory() {
+                    //    var data = {
+                    //        Id: 0,
+                    //        Name: $('#inpCategoryName').val(),
+                    //        ParentId: $('#ParentCategory').val(),
+                    //        IsActive: true
+                    //    };
+                    //    $.ajax({
+                    //        url: 'CategoryCreate',
+
+                    //    })
+                    //}
+    </script>
+}
+

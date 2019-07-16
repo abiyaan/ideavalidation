@@ -1,0 +1,202 @@
+﻿@{
+    ViewData["Title"] = "Home Page";
+}
+<style type="text/css">
+    .well > h3 {
+        color: #808080;
+    }
+
+    .well {
+        background-color: #fff;
+        -moz-box-shadow: 0 0 10px #ccc;
+        -webkit-box-shadow: 0 0 10px #ccc;
+        box-shadow: 0 0 20px #ccc;
+        cursor: pointer;
+        padding: 10px 2px 0px 2px !important;
+    }
+
+        .well:hover {
+            box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+        }
+</style>
+<article>
+    <div class="col col-lg-2 col-md-2 col-sm-6 col-xs-6">
+        <div class="well text-center">
+            <div class="">
+                <i class="fa fa-3x">0</i>
+            </div>
+            <h3>Category</h3>
+            <div class="row" style="border-top: 1px dashed lightgray;color:rgba(0, 0, 0, 0.2);width: 100%;margin: 0;padding: 0;">
+                <div class="col col-xs-4 col-sm-4 col-md-4 col-lg-4" style="background-color:lightblue;padding:3px 0 3px 0;">
+                    <a data-toggle="modal" data-target="#myModal" data-backdrop="static"
+                       href="/Master/CategoryCreate">
+                        <i class="fa fa-plus fa-2x"></i>
+                    </a>
+                </div>
+                <div class="col col-xs-4 col-sm-4 col-md-4 col-lg-4" style="background-color:lightsalmon;padding:3px 0 3px 0;">
+                    <a data-toggle="modal" data-target="#myModal" data-backdrop="static"
+                       href="#">
+                        <i class="fa fa-upload fa-2x"></i>
+                    </a>
+                </div>
+                <div class="col col-xs-4 col-sm-4 col-md-4 col-lg-4" style="background-color:lightgoldenrodyellow;padding:3px 0 3px 0;">
+                    <a data-toggle="modal" data-target="#myModal" data-backdrop="static"
+                       href="/Master/CategoryView">
+                        <i class="fa fa-table fa-2x"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="col col-lg-2 col-md-2 col-sm-6 col-xs-6">
+        <div class="well text-center">
+            <div class="">
+                <i class="fa fa-3x">0</i>
+            </div>
+            <h3>Business Type</h3>
+            <div class="row" style="border-top: 1px dashed lightgray;color:rgba(0, 0, 0, 0.2);width: 100%;margin: 0;padding: 0;">
+                <div class="col col-xs-4 col-sm-4 col-md-4 col-lg-4" style="background-color:lightblue;padding:3px 0 3px 0;">
+                    <a data-toggle="modal" data-target="#myModal" data-backdrop="static"
+                       href="/Master/BusinessTypeCreate">
+                        <i class="fa fa-plus fa-2x"></i>
+                    </a>
+                </div>
+                <div class="col col-xs-4 col-sm-4 col-md-4 col-lg-4" style="background-color:lightsalmon;padding:3px 0 3px 0;">
+                    <a data-toggle="modal" data-target="#myModal" data-backdrop="static"
+                       href="#">
+                        <i class="fa fa-upload fa-2x"></i>
+                    </a>
+                </div>
+                <div class="col col-xs-4 col-sm-4 col-md-4 col-lg-4" style="background-color:lightgoldenrodyellow;padding:3px 0 3px 0;">
+                    <a data-toggle="modal" data-target="#myModal" data-backdrop="static"
+                       href="#">
+                        <i class="fa fa-table fa-2x"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="col col-lg-2 col-md-2 col-sm-6 col-xs-6">
+        <div class="well text-center">
+            <div class="">
+                <i class="fa fa-3x">0</i>
+            </div>
+            <h3>Address Type</h3>
+            <div class="row" style="border-top: 1px dashed lightgray;color:rgba(0, 0, 0, 0.2);width: 100%;margin: 0;padding: 0;">
+                <div class="col col-xs-4 col-sm-4 col-md-4 col-lg-4" style="background-color:lightblue;padding:3px 0 3px 0;">
+                    <a data-toggle="modal" data-target="#myModal" data-backdrop="static"
+                       href="/Master/AddressTypeCreate">
+                        <i class="fa fa-plus fa-2x"></i>
+                    </a>
+                </div>
+                <div class="col col-xs-4 col-sm-4 col-md-4 col-lg-4" style="background-color:lightsalmon;padding:3px 0 3px 0;">
+                    <a data-toggle="modal" data-target="#myModal" data-backdrop="static"
+                       href="#">
+                        <i class="fa fa-upload fa-2x"></i>
+                    </a>
+                </div>
+                <div class="col col-xs-4 col-sm-4 col-md-4 col-lg-4" style="background-color:lightgoldenrodyellow;padding:3px 0 3px 0;">
+                    <a href="#">
+                        <i class="fa fa-table fa-2x"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="col col-lg-2 col-md-2 col-sm-6 col-xs-6">
+        <div class="well text-center">
+            <div class="">
+                <i class="fa fa-3x">0</i>
+            </div>
+            <h3>Country</h3>
+            <div class="row" style="border-top: 1px dashed lightgray;color:rgba(0, 0, 0, 0.2);width: 100%;margin: 0;padding: 0;">
+                <div class="col col-xs-4 col-sm-4 col-md-4 col-lg-4" style="background-color:lightblue;padding:3px 0 3px 0;">
+                    <a data-toggle="modal" data-target="#myModal" data-backdrop="static"
+                       href="/Master/CountryCreate">
+                        <i class="fa fa-plus fa-2x"></i>
+                    </a>
+                </div>
+                <div class="col col-xs-4 col-sm-4 col-md-4 col-lg-4" style="background-color:lightsalmon;padding:3px 0 3px 0;">
+                    <a data-toggle="modal" data-target="#myModal" data-backdrop="static"
+                       href="#">
+                        <i class="fa fa-upload fa-2x"></i>
+                    </a>
+                </div>
+                <div class="col col-xs-4 col-sm-4 col-md-4 col-lg-4" style="background-color:lightgoldenrodyellow;padding:3px 0 3px 0;">
+                    <a href="#">
+                        <i class="fa fa-table fa-2x"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="col col-lg-2 col-md-2 col-sm-6 col-xs-6">
+        <div class="well text-center">
+            <div class="">
+                <i class="fa fa-3x">0</i>
+            </div>
+            <h3>State</h3>
+            <div class="row" style="border-top: 1px dashed lightgray;color:rgba(0, 0, 0, 0.2);width: 100%;margin: 0;padding: 0;">
+                <div class="col col-xs-4 col-sm-4 col-md-4 col-lg-4" style="background-color:lightblue;padding:3px 0 3px 0;">
+                    <a data-toggle="modal" data-target="#myModal" data-backdrop="static"
+                       href="/Master/StateCreate">
+                        <i class="fa fa-plus fa-2x"></i>
+                    </a>
+                </div>
+                <div class="col col-xs-4 col-sm-4 col-md-4 col-lg-4" style="background-color:lightsalmon;padding:3px 0 3px 0;">
+                    <a data-toggle="modal" data-target="#myModal" data-backdrop="static"
+                       href="#">
+                        <i class="fa fa-upload fa-2x"></i>
+                    </a>
+                </div>
+                <div class="col col-xs-4 col-sm-4 col-md-4 col-lg-4" style="background-color:lightgoldenrodyellow;padding:3px 0 3px 0;">
+                    <a href="#">
+                        <i class="fa fa-table fa-2x"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="col col-lg-2 col-md-2 col-sm-6 col-xs-6">
+        <div class="well text-center">
+            <div class="">
+                <i class="fa fa-3x">0</i>
+            </div>
+            <h3>City</h3>
+            <div class="row" style="border-top: 1px dashed lightgray;color:rgba(0, 0, 0, 0.2);width: 100%;margin: 0;padding: 0;">
+                <div class="col col-xs-4 col-sm-4 col-md-4 col-lg-4" style="background-color:lightblue;padding:3px 0 3px 0;">
+                    <a data-toggle="modal" data-target="#myModal" data-backdrop="static"
+                       href="/Master/CityCreate">
+                        <i class="fa fa-plus fa-2x"></i>
+                    </a>
+                </div>
+                <div class="col col-xs-4 col-sm-4 col-md-4 col-lg-4" style="background-color:lightsalmon;padding:3px 0 3px 0;">
+                    <a data-toggle="modal" data-target="#myModal" data-backdrop="static"
+                       href="#">
+                        <i class="fa fa-upload fa-2x"></i>
+                    </a>
+                </div>
+                <div class="col col-xs-4 col-sm-4 col-md-4 col-lg-4" style="background-color:lightgoldenrodyellow;padding:3px 0 3px 0;">
+                    <a href="#">
+                        <i class="fa fa-table fa-2x"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+</article>
+@section Scripts{ 
+<script src="~/js/libs/jquery.unobtrusive-ajax/jquery.unobtrusive-ajax.min.js"></script>
+    <script type="text/javascript">
+        debugger;
+        var msg = '@ViewBag.Message';
+
+            if (msg !== '')
+            {
+                alert(msg);
+            }
+        
+    </script>
+    
+
+}

@@ -1,0 +1,17 @@
+{
+  "name": "IdeaValidation.backend",
+  "version": "1.0.0",
+  "description": "Backoffice application for IdeaValidation",
+  "main": "wwwroot/js/app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+"
+  },
+  "keywords": [],
+  "author": "Intelymind Technologies & Business Solutions",
+  "license": "",
+  "homepage": "http://intelymind.com"
+}

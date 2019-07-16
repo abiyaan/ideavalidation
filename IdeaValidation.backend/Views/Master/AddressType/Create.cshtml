@@ -1,0 +1,51 @@
+﻿@model IdeaValidation.Core.ViewModel.Masters.AddressTypeCreateViewModel
+<div class="modal-header" style="background-color:#5a5a5a; color:#fff;">
+    <button type="button" class="close" data-dismiss="modal" aria-hidden="true" style="color:#fff">
+        &times;
+    </button>
+    <h4 class="modal-title" id="myModalLabel">Create Address Type</h4>
+</div>
+<form method="post" action="Master/AddressTypeCreate">
+    <div class="modal-body">
+        <div style="min-height:250px; ">
+            <div class="smart-form">
+                <fieldset>
+                    <div class="row">
+                        <section class="col col-sm-4 col-md-4 col-lg-4">
+                            <label class="label">
+                                Type Name
+                            </label>
+                        </section>
+                        <section class="col-md-8 col-sm-12 col-lg-8">
+                            <label class="select">
+                                <label class="input">
+                                    <input type="text" asp-for="TypeName" placeholder="" />
+                                </label>
+                            </label>
+                        </section>
+                    </div>
+                    <div class="row">
+                        <section class="col col-sm-4 col-md-4 col-lg-4">
+                            <label class="label">
+                                Type Code
+                            </label>
+                        </section>
+                        <section class="col-md-8 col-sm-12 col-lg-8">
+                            <label class="input">
+                                <input type="text" asp-for="TypeCode" placeholder="" />
+                            </label>
+                        </section>
+                    </div>
+                </fieldset>
+            </div>
+        </div>
+    </div>
+    <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">
+            Cancel
+        </button>
+        <button type="button" class="btn btn-primary" id="btnSaveAddressType">
+            Save
+        </button>
+    </div>
+</form>

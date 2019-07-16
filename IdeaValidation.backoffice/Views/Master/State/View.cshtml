@@ -1,0 +1,88 @@
+﻿@model IdeaValidation.Core.ViewModel.Masters.StateViewViewModel
+<div class="modal-header" >
+    <button type="button" class="close" data-dismiss="modal" aria-hidden="true" style="color:#fff">
+        &times;
+    </button>
+    <h4 class="modal-title" id="myModalLabel">View States</h4>
+</div>
+<div class="modal-body">
+    <div style="min-height:440px; ">
+        <article class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+            <div class="widget-body no-padding">
+                <div class="pull-left">
+                    <label class="select">
+                        @Html.DropDownList("selectCountry", Model.CountryList, new { @class = "form-control input-sm" })
+                        <i></i>
+                    </label>
+                </div>
+                <div class="pull-right">
+                    <label class="input">
+                        <input type="text" placeholder="Search" class="form-control input-sm" id="txtSearch"/>
+                    </label>
+                </div>
+                <table id="dt_basic" class="table table-striped table-bordered table-hover table-condensed" width="100%">
+                    <thead>
+                        <tr>
+                            <th data-hide="phone">#</th>
+                            <th data-class="expand"><i class=""></i> State</th>
+                            <th data-hide="phone"><i class=""></i> State Code</th>
+                            <th>Country ID</th>
+                            <th></th>
+                            <th></th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @for (int i = 0; i < Model.StateList.Count; i++)
+                        {
+                            <tr>
+                                <td>@(i + 1)</td>
+                                <td>
+                                    @Model.StateList[i].Name
+                                </td>
+                                <td>
+                                    @Model.StateList[i].StateCode
+                                </td>
+                                <td>
+                                    @Model.StateList[i].CountryID
+                                </td>
+                                <td>
+                                    <a href="#"><i class="fa fa-edit"></i></a>
+                                </td>
+                                <td>
+                                    <a href="#"><i class="fa fa-trash"></i></a>
+                                </td>
+                            </tr>
+                        }
+                    </tbody>
+                </table>
+
+            </div>
+        </article>
+    </div>
+</div>
+<script type="text/javascript">
+    var table = $('#dt_basic').DataTable({
+        dom: "Brtip",
+        "columnDefs": [
+            {
+                "targets": [3],
+                "visible": false,
+                "searchable": true
+            }
+        ]
+    });
+
+    $('#selectCountry').on('change', function () {
+        table.columns(3)
+            .search(this.value, true, false)
+            .draw();
+    });
+
+    $('#txtSearch').on('keyup', function () {
+        table.search(this.value, true, false)
+            .draw();
+    });
+
+    $('#selectCountry').val($('#selectCountry option:first').val());
+    $('#selectCountry').trigger('change');
+</script>

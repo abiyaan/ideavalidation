@@ -1,0 +1,143 @@
+﻿@model IdeaValidation.Core.ViewModel.Masters.BusinessViewViewModel
+<div class="modal-header">
+    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">
+        &times;
+    </button>
+    <h4 class="modal-title" id="myModalLabel">View Businesses</h4>
+</div>
+<div class="modal-body no-padding">
+    <br />
+    <div style="min-height:440px; padding:2px;">
+        <article class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+            <div class="widget-body no-padding">
+                <div class="pull-left">
+                    <label class="select">
+                        @Html.DropDownList("selectCategory", Model.CategoryList, new { @style = "width:200px" })
+                        <i></i>
+                    </label>
+                </div>
+                <div class="pull-right">
+                    <label class="input">
+                        <input type="text" placeholder="Search" class="form-control input-sm" id="txtSearch" />
+                    </label>
+                </div>
+                <table id="dt_basic" class="table table-striped table-bordered table-hover table-condensed" width="100%">
+                    <thead>
+                        <tr>
+                            <th data-hide="phone">#</th>
+                            <th data-class="expand"><i class=""></i> Business Name</th>
+                            <th data-hide="phone"><i class=""></i> Registration #</th>
+                            <th>Category ID</th>
+                            <th>Year</th>
+                            <th>Country</th>
+                            <th>Business Type</th>
+                            <th></th>
+                            <th></th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @for (int i = 0; i < Model.BusinessList.Count; i++)
+                        {
+                        <tr>
+                            <td>@(i + 1)</td>
+                            <td>
+                                @Model.BusinessList[i].BusinessName
+                            </td>
+                            <td>
+                                @Model.BusinessList[i].RegistrationNo
+                            </td>
+                            <td>
+                                @Model.BusinessList[i].CategoryID
+                            </td>
+                            <td>
+                                @Model.BusinessList[i].YearOfIncorporation
+                            </td>
+                            <td>
+                                @Model.BusinessList[i].Country
+                            </td>
+                            <td>
+                                @Model.BusinessList[i].BusinessType
+                            </td>
+                            <td>
+                                <a href="#"><i class="fa fa-edit"></i></a>
+                            </td>
+                            <td>
+                                <a href="#"><i class="fa fa-trash"></i></a>
+                            </td>
+                        </tr>
+                        }
+                    </tbody>
+                </table>
+
+            </div>
+        </article>
+    </div>
+</div>
+<script type="text/javascript">
+    //var businessData = {};
+    $('.modal-body').parent().parent().css({ 'width': '75%' });
+    var table = $('#dt_basic').DataTable({
+        dom: "Brtip",
+        "columnDefs": [
+            {
+                "targets": [3],
+                "visible": false,
+                "searchable": true
+            }
+        ]
+    });
+
+    convertToSelect2($('#selectCategory'));
+    $('#selectCategory').on('change', function () {
+        var categoryId = this.value;
+        //var data = [];
+        //if (_.has(stateList, countryId)) {
+        //    data = stateList[countryId];
+        //    bindDropdown($('#StateID'), data, true);
+        //}
+        //else {
+            $.ajax({
+                url: '/Master/GetBusinessByCategoryID?categoryID=' + categoryId,
+                dataType: 'json',
+                success: function (result) {
+                    var data = result.Data;
+                    //stateList[countryId] = data;
+                    table.destroy();
+                    $('#dt_basic > tbody').html('');
+                    var htmlString = '';
+                    $.each(data, function (idx, elem) {
+                        htmlString += '<tr><td>' + (idx + 1) + '</td><td>' + elem.BusinessName +
+                            '</td><td>' + elem.RegistrationNo +
+                            '</td><td>' + elem.CategoryID +
+                            '</td><td>' + elem.YearOfIncorporation +
+                            '</td><td>' + elem.Country +
+                            '</td><td>' + elem.BusinessType +
+                            '</td><td><a href = "#"> <i class="fa fa-edit"></i></a>' +
+                            '</td><td><a href="#"><i class="fa fa-trash"></i></a></td></tr>';
+                    });
+                    $('#dt_basic > tbody').html(htmlString);
+                    table = $('#dt_basic').DataTable({
+                        dom: "Brtip",
+                        "columnDefs": [
+                            {
+                                "targets": [3],
+                                "visible": false,
+                                "searchable": true
+                            }
+                        ]
+                    });
+                }
+            })
+        //}
+        ////table.columns(3)
+        ////    .search(this.value, true, false)
+        ////    .draw();
+    });
+
+    $('#txtSearch').on('keyup', function () {
+        table.search(this.value, true, false)
+            .draw();
+    });
+
+    $('#selectCategory').val($('#selectCategory option:first').val());
+</script>

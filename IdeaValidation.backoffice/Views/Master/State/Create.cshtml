@@ -1,0 +1,96 @@
+﻿@model IdeaValidation.Core.ViewModel.Masters.StateCreateViewModel
+
+<div class="modal-header" style="background-color:#5a5a5a; color:#fff;">
+    <button type="button" class="close" data-dismiss="modal" aria-hidden="true" style="color:#fff">
+        &times;
+    </button>
+    <h4 class="modal-title" id="myModalLabel">Create State</h4>
+</div>
+@using (Ajax.BeginForm("StateCreate", "Master", new AjaxOptions()
+{
+    OnSuccess = "OnSuccess",
+    OnFailure = "OnFailure",
+    Confirm = "Are you sure?",
+    HttpMethod = "Post"
+}))
+{
+<div class="modal-body">
+    <code id="lastRecordCode" class="">
+        @Model.LastRecord
+    </code>
+    <div style="min-height:250px; ">
+        <div class="smart-form">
+            <fieldset>
+                <div class="row">
+                    <section class="col col-sm-4 col-md-4 col-lg-4">
+                        <label class="label">
+                            Select Country
+                        </label>
+                    </section>
+                    <section class="col-md-8 col-sm-12 col-lg-8">
+                        <label class="select">
+                            @Html.DropDownListFor(model => model.CountryID, Model.CountryList, new { @class = "select" })
+                            <i></i>
+                        </label>
+                    </section>
+                </div>
+                <div class="row">
+                    <section class="col col-sm-4 col-md-4 col-lg-4">
+                        <label class="label">
+                            State Name
+                        </label>
+                    </section>
+                    <section class="col-md-8 col-sm-12 col-lg-8">
+                        <label class="input">
+                            <input type="text" id="Name" name="Name" placeholder="" />
+                        </label>
+                    </section>
+                </div>
+                <div class="row">
+                    <section class="col col-sm-4 col-md-4 col-lg-4">
+                        <label class="label">
+                            State Code
+                        </label>
+                    </section>
+                    <section class="col-md-8 col-sm-12 col-lg-8">
+                        <label class="input">
+                            <input type="text" id="StateCode" name="StateCode" placeholder="" />
+                        </label>
+                    </section>
+                </div>
+            </fieldset>
+        </div>
+    </div>
+</div>
+    <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">
+            Cancel
+        </button>
+        <button type="submit" class="btn btn-primary" id="btnSaveState">
+            Save
+        </button>
+    </div>
+}
+
+    <script type="text/javascript">
+
+        function OnSuccess(result) {
+            $.smallBox({
+                title: "Ding Dong!",
+                content: "Category Added succesfully",
+                color: "green",
+                icon: "fa fa-check swing animated"
+            });
+            $('#Name').val('');
+            $('#StateCode').val('');
+        }
+
+        function OnFailure(err) {
+            $.smallBox({
+                title: "Sorry!",
+                content: "Unable to save this record",
+                color: "red",
+                icon: "fa fa-tick swing animated"
+            });
+        }
+    </script>

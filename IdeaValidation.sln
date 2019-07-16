@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.28307.572
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "IdeaValidation.backoffice", "IdeaValidation.backoffice\IdeaValidation.backoffice.csproj", "{FB52D9A6-BB11-46C2-9E5F-FC0A9366EA1E}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "IdeaValidation.Core", "IdeaValidation.Core\IdeaValidation.Core.csproj", "{02F1CFA3-9BBB-468F-ACC2-E85057B57242}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{FB52D9A6-BB11-46C2-9E5F-FC0A9366EA1E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FB52D9A6-BB11-46C2-9E5F-FC0A9366EA1E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FB52D9A6-BB11-46C2-9E5F-FC0A9366EA1E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FB52D9A6-BB11-46C2-9E5F-FC0A9366EA1E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{02F1CFA3-9BBB-468F-ACC2-E85057B57242}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{02F1CFA3-9BBB-468F-ACC2-E85057B57242}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{02F1CFA3-9BBB-468F-ACC2-E85057B57242}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{02F1CFA3-9BBB-468F-ACC2-E85057B57242}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {424A9E45-5BC6-4F24-BEBA-A7F28F0D6102}
+	EndGlobalSection
+EndGlobal
