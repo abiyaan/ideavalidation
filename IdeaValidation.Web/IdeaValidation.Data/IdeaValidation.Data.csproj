@@ -49,27 +49,6 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Address.cs">
-      <DependentUpon>IdeaValidation.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Category.cs">
-      <DependentUpon>IdeaValidation.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Company.cs">
-      <DependentUpon>IdeaValidation.tt</DependentUpon>
-    </Compile>
-    <Compile Include="CompanyCategory.cs">
-      <DependentUpon>IdeaValidation.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Country.cs">
-      <DependentUpon>IdeaValidation.tt</DependentUpon>
-    </Compile>
-    <Compile Include="DailyVisit.cs">
-      <DependentUpon>IdeaValidation.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Finance.cs">
-      <DependentUpon>IdeaValidation.tt</DependentUpon>
-    </Compile>
     <Compile Include="IdeaValidation.Context.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -87,12 +66,6 @@
     </Compile>
     <Compile Include="IdeaValidationRepository.cs" />
     <Compile Include="IIdeaValidationRepository.cs" />
-    <Compile Include="OnlinePresence.cs">
-      <DependentUpon>IdeaValidation.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Person.cs">
-      <DependentUpon>IdeaValidation.tt</DependentUpon>
-    </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

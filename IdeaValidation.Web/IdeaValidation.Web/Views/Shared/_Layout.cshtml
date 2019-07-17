@@ -1,42 +1,336 @@
 ﻿<!DOCTYPE html>
-<html>
+<html dir="ltr">
 <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>@ViewBag.Title - My ASP.NET Application</title>
-    @Styles.Render("~/Content/css")
-    @Scripts.Render("~/bundles/modernizr")
-</head>
-<body>
-    <div class="navbar navbar-inverse navbar-fixed-top">
-        <div class="container">
-            <div class="navbar-header">
-                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                </button>
-                @Html.ActionLink("Application name", "Index", "Home", new { area = "" }, new { @class = "navbar-brand" })
-            </div>
-            <div class="navbar-collapse collapse">
-                <ul class="nav navbar-nav">
-                    <li>@Html.ActionLink("Home", "Index", "Home")</li>
-                    <li>@Html.ActionLink("About", "About", "Home")</li>
-                    <li>@Html.ActionLink("Contact", "Contact", "Home")</li>
-                </ul>
-            </div>
-        </div>
-    </div>
-    <div class="container body-content">
-        @RenderBody()
-        <hr />
-        <footer>
-            <p>&copy; @DateTime.Now.Year - My ASP.NET Application</p>
-        </footer>
-    </div>
 
-    @Scripts.Render("~/bundles/jquery")
-    @Scripts.Render("~/bundles/bootstrap")
-    @RenderSection("scripts", required: false)
+    <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+    <meta name="author" content="SemiColonWeb" />
+
+    <!-- Stylesheets
+    ============================================= -->
+    <link href="http://fonts.googleapis.com/css?family=Poppins:300,400,400i,600,700|Montserrat:400,700|Merriweather" rel="stylesheet" type="text/css" />
+    <link rel="stylesheet" href="~/css/bootstrap.css" type="text/css" />
+    <link rel="stylesheet" href="~/css/style.css" type="text/css" />
+    <link rel="stylesheet" href="~/css/dark.css" type="text/css" />
+
+    <!-- Media Agency Demo Specific Stylesheet -->
+    <link rel="stylesheet" href="~/demos/app-landing/app-landing.css" type="text/css" />
+    <!-- / -->
+
+    <link rel="stylesheet" href="~/css/font-icons.css" type="text/css" />
+    <link rel="stylesheet" href="~/css/et-line.css" type="text/css" />
+    <link rel="stylesheet" href="~/css/animate.css" type="text/css" />
+    <link rel="stylesheet" href="~/css/magnific-popup.css" type="text/css" />
+
+    <link rel="stylesheet" href="~/demos/app-landing/css/fonts.css" type="text/css" />
+
+    <!-- Bootstrap Switch CSS -->
+    <link rel="stylesheet" href="~/css/components/bs-switches.css" type="text/css" />
+
+    <link rel="stylesheet" href="~/css/responsive.css" type="text/css" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <link rel="stylesheet" href="~/demos/app-landing/css/colors.css" type="text/css" />
+
+    <!-- Document Title
+    ============================================= -->
+    <title>App Landing | Canvas</title>
+
+</head>
+
+<body class="stretched">
+
+    <!-- Document Wrapper
+    ============================================= -->
+    <div id="wrapper" class="clearfix">
+
+        <!-- Header
+        ============================================= -->
+        <header id="header" class="split-menu transparent-header dark" data-sticky-class="not-dark" data-responsive-class="not-dark">
+
+            <div id="header-wrap">
+
+                <div class="container clearfix">
+
+                    <div id="primary-menu-trigger"><i class="icon-reorder"></i></div>
+
+                    <!-- Logo
+                    ============================================= -->
+                    <div id="logo">
+                        <a href="index.html" class="standard-logo" data-dark-logo="/demos/app-landing/images/logo-dark.png"><img src="~/demos/app-landing/images/logo.png" alt="Canvas Logo"></a>
+                        <a href="index.html" class="retina-logo" data-dark-logo="/demos/app-landing/images/logo-dark@2x.png"><img src="~/demos/app-landing/images/logo@2x.png" alt="Canvas Logo"></a>
+                    </div><!-- #logo end -->
+                    <!-- Primary Navigation
+                    ============================================= -->
+                    <nav id="primary-menu" class="with-arrows clearfix not-dark">
+
+                        <ul class="one-page-menu" data-easing="easeInOutExpo" data-speed="1250" data-offset="160">
+                            <li><a href="#" data-href="#wrapper"><div>Home</div></a></li>
+                            <li>
+                                <a href="#" data-href="#section-nextgen"><div>Explore</div></a>
+                                <ul>
+                                    <li><a href="#" data-href="#section-nextgen"><div>NextGen Framework</div></a></li>
+                                    <li><a href="#" data-href="#section-stunning-graphics"><div>Stunning Graphics</div></a></li>
+                                    <li><a href="#" data-href="#section-secured-solutions"><div>Secured Solutions</div></a></li>
+                                </ul>
+                            </li>
+                            <li><a href="#" data-href="#section-pricing"><div>Pricing</div></a></li>
+                        </ul>
+
+                        <ul class="one-page-menu" data-easing="easeInOutExpo" data-speed="1250" data-offset="160">
+                            <li><a href="#" data-href="#section-faqs"><div>FAQs</div></a></li>
+                            <li><a href="#" data-href="#section-gallery"><div>Gallery</div></a></li>
+                            <li class="menu-item-emphasis"><a href="#modal-login" data-lightbox="inline"><div>Login</div></a></li>
+                        </ul>
+
+                    </nav><!-- #primary-menu end -->
+
+                </div>
+
+            </div>
+
+        </header><!-- #header end -->
+
+        <section id="slider" class="slider-element full-screen slider-parallax">
+            <div class="slider-parallax-inner" style="background: url('/demos/app-landing/images/hero/hero.jpg') center center no-repeat; background-size: cover;">
+                <div class="vertical-middle" style="z-index: 2;">
+                    <div class="container dark clearfix">
+                        <div class="row clearfix">
+                            <div class="col-lg-6 col-md-8">
+                                <div class="emphasis-title">
+                                    <h1 class="font-body">Beautiful Websites.<br>Increased Conversions.</h1>
+                                </div>
+                                <a href="#" data-scrollto="#section-pricing" data-easing="easeInOutExpo" data-speed="1250" data-offset="160" class="button button-large button-white button-light capitalize" style="border-radius: 23px;">Try it Free</a>
+                                <a href="https://www.youtube.com/watch?v=N_r349riLEE" class="hero-action-link" data-lightbox="iframe"><i class="icon-play-sign"></i> Watch the Video</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="video-wrap" style="position: absolute; height: 100%; z-index: 1;">
+                    <div class="video-overlay" style="background: rgba(0,0,0,0.2);"></div>
+                </div>
+            </div>
+        </section>
+
+        @RenderBody()
+        <!-- Footer
+        ============================================= -->
+        <footer id="footer" style="background-color: #FFF;">
+
+            <div class="container">
+
+                <!-- Footer Widgets
+                ============================================= -->
+                <div class="footer-widgets-wrap clearfix">
+                    <div class="row clearfix">
+
+                        <div class="col-lg-5">
+
+                            <div class="widget clearfix">
+                                <div class="row clearfix">
+                                    <div class="col-lg-8 bottommargin-sm clearfix" style="color:#888;">
+                                        <img src="~/demos/app-landing/images/footer-logo.png" alt="Canvas Logo" style="display: block;" class="bottommargin-sm">
+                                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Odio, consequatur facere molestiae iusto atque.</p>
+
+                                        <a href="#" class="social-icon si-small si-borderless si-colored si-rounded si-facebook">
+                                            <i class="icon-facebook"></i>
+                                            <i class="icon-facebook"></i>
+                                        </a>
+
+                                        <a href="#" class="social-icon si-small si-borderless si-colored si-rounded si-twitter">
+                                            <i class="icon-twitter"></i>
+                                            <i class="icon-twitter"></i>
+                                        </a>
+
+                                        <a href="#" class="social-icon si-small si-borderless si-colored si-rounded si-gplus">
+                                            <i class="icon-gplus"></i>
+                                            <i class="icon-gplus"></i>
+                                        </a>
+
+                                        <a href="#" class="social-icon si-small si-borderless si-colored si-rounded si-pinterest">
+                                            <i class="icon-pinterest"></i>
+                                            <i class="icon-pinterest"></i>
+                                        </a>
+
+                                        <a href="#" class="social-icon si-small si-borderless si-colored si-rounded si-vimeo">
+                                            <i class="icon-vimeo"></i>
+                                            <i class="icon-vimeo"></i>
+                                        </a>
+
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+
+                        <div class="col-lg-7">
+                            <div class="row clearfix">
+
+                                <div class="col-lg-4 bottommargin-sm">
+                                    <div class="widget widget_links app_landing_widget_link clearfix">
+                                        <h4>In News</h4>
+
+                                        <ul>
+                                            <li><a href="http://codex.wordpress.org/">Documentation</a></li>
+                                            <li><a href="http://wordpress.org/support/forum/requests-and-feedback">Feedback</a></li>
+                                            <li><a href="http://wordpress.org/extend/plugins/">Plugins</a></li>
+                                            <li><a href="http://wordpress.org/support/">Support Forums</a></li>
+                                            <li><a href="http://wordpress.org/extend/themes/">Themes</a></li>
+                                        </ul>
+                                    </div>
+                                </div>
+                                <div class="col-lg-4 bottommargin-sm">
+                                    <div class="widget widget_links app_landing_widget_link clearfix">
+                                        <h4>About Us</h4>
+
+                                        <ul>
+                                            <li><a href="http://codex.wordpress.org/">Documentation</a></li>
+                                            <li><a href="http://wordpress.org/support/forum/requests-and-feedback">Feedback</a></li>
+                                            <li><a href="http://wordpress.org/extend/plugins/">Plugins</a></li>
+                                            <li><a href="http://wordpress.org/support/">Support Forums</a></li>
+                                            <li><a href="http://wordpress.org/extend/themes/">Themes</a></li>
+                                        </ul>
+                                    </div>
+                                </div>
+                                <div class="col-lg-4 bottommargin-sm">
+                                    <div class="widget widget_links app_landing_widget_link clearfix">
+                                        <h4>Support</h4>
+
+                                        <ul>
+                                            <li><a href="http://codex.wordpress.org/">Documentation</a></li>
+                                            <li><a href="http://wordpress.org/support/forum/requests-and-feedback">Feedback</a></li>
+                                            <li><a href="http://wordpress.org/extend/plugins/">Plugins</a></li>
+                                            <li><a href="http://wordpress.org/support/">Support Forums</a></li>
+                                            <li><a href="http://wordpress.org/extend/themes/">Themes</a></li>
+                                        </ul>
+                                    </div>
+                                </div>
+
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+
+            </div>
+
+            <!-- Copyrights
+            ============================================= -->
+            <div id="copyrights" class="nobg notoppadding">
+
+                <div class="container clearfix">
+
+                    <div class="col_half">
+                        Copyrights &copy; 2014 All Rights Reserved by Canvas Inc.<br>
+                        <div class="copyright-links"><a href="#">Terms of Use</a> / <a href="#">Privacy Policy</a></div>
+                    </div>
+
+                </div>
+
+            </div><!-- #copyrights end -->
+
+        </footer><!-- #footer end -->
+
+    </div><!-- #wrapper end -->
+    <!-- Go To Top
+    ============================================= -->
+    <div id="gotoTop" class="icon-angle-up"></div>
+
+    <!-- External JavaScripts
+    ============================================= -->
+    <script src="~/js/jquery.js"></script>
+    <script src="~/js/plugins.js"></script>
+
+    <!-- Footer Scripts
+    ============================================= -->
+    <script src="~/js/functions.js"></script>
+
+    <script>
+		jQuery(document).ready( function($){
+
+			function pricingSwitcher( elementCheck, elementParent, elementPricing ) {
+				elementParent.find('.pts-left,.pts-right').removeClass('pts-switch-active');
+				elementPricing.find('.pts-switch-content-left,.pts-switch-content-right').addClass('hidden');
+
+				if( elementCheck.filter(':checked').length > 0 ) {
+					elementParent.find('.pts-right').addClass('pts-switch-active');
+					elementPricing.find('.pts-switch-content-right').removeClass('hidden');
+				} else {
+					elementParent.find('.pts-left').addClass('pts-switch-active');
+					elementPricing.find('.pts-switch-content-left').removeClass('hidden');
+				}
+			}
+
+			$('.pts-switcher').each( function(){
+				var element = $(this),
+					elementCheck = element.find(':checkbox'),
+					elementParent = $(this).parents('.pricing-tenure-switcher'),
+					elementPricing = $( elementParent.attr('data-container') );
+
+				pricingSwitcher( elementCheck, elementParent, elementPricing );
+
+				elementCheck.on( 'change', function(){
+					pricingSwitcher( elementCheck, elementParent, elementPricing );
+				});
+			});
+
+			// Get Started From Validation
+			var getStartedForm = $('#get-started-form'),
+				getStartedFormAlert = getStartedForm.attr('data-alert-type'),
+				getStartedFormLoader = getStartedForm.attr('data-loader'),
+				getStartedFormResult = getStartedForm.find('.contact-form-result'),
+				getStartedFormRedirect = getStartedForm.attr('data-redirect');
+
+			getStartedForm.validate({
+				submitHandler: function(form) {
+
+					getStartedFormResult.hide();
+
+					if( getStartedFormLoader == 'button' ) {
+						var defButton = $(form).find('button'),
+							defButtonText = defButton.html();
+
+						defButton.html('<i class="icon-line-loader icon-spin nomargin"></i>');
+					} else {
+						$(form).find('.form-process').fadeIn();
+					}
+
+					$(form).ajaxSubmit({
+						target: getStartedFormResult,
+						dataType: 'json',
+						resetForm: true,
+						success: function( data ) {
+							if( getStartedFormLoader == 'button' ) {
+								defButton.html( defButtonText );
+							} else {
+								$(form).find('.form-process').fadeOut();
+							}
+							if( data.alert != 'error' && getStartedFormRedirect ){
+								window.location.replace( getStartedFormRedirect );
+								return true;
+							}
+							if( getStartedFormAlert == 'inline' ) {
+								if( data.alert == 'error' ) {
+									var alertType = 'alert-danger';
+								} else {
+									var alertType = 'alert-success';
+								}
+
+								getStartedFormResult.addClass( 'alert ' + alertType ).html( data.message ).slideDown( 400 );
+							} else {
+								getStartedFormResult.attr( 'data-notify-type', data.alert ).attr( 'data-notify-msg', data.message ).html('');
+								SEMICOLON.widget.notifications( getStartedFormResult );
+							}
+						}
+					});
+				}
+			});
+
+			$('[data-pricing-plan]').click( function(){
+				getStartedForm.find('#get-started-form-package').val( $(this).attr('data-pricing-plan') );
+				getStartedForm.find('#modal-get-started-package').html( $(this).attr('data-pricing-plan') );
+			});
+
+		});
+    </script>
 </body>
 </html>
